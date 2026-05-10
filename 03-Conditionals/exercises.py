@@ -1,0 +1,165 @@
+
+
+#Yaşı verilen bir kişinin yaşının başkan olmaya yeterli olup olmadığını veren kod
+
+def can_run_for_president(age):
+    """Can someone of the given age run for president in the US?"""
+    # The US Constitution says you must be at least 35 years old
+    return age >= 35
+
+print("Can a 19-year-old run for president?", can_run_for_president(19))
+print("Can a 45-year-old run for president?", can_run_for_president(45))
+
+
+
+#Bir sayının tek olup olmadığını kontrol eden kod
+
+def is_odd(n):
+    return (n%2) == 1
+
+print("Is 100 odd?",is_odd(100))
+print("IS -1 odd?",is_odd(-1))
+
+
+
+#Yaşı verilen bir kişinin yaşının başkan olmaya yeterli ve dooğuştan ABD vatandaşı olup olmadığını veren kod
+
+def can_run_for_president(age, is_natural_born_citizen):
+    """Can someone of the given age and citizenship status run for president in the US?"""
+    # The US Constitution says you must be a natural born citizen *and* at least 35 years old
+    return is_natural_born_citizen and (age >= 35)
+
+print(can_run_for_president(19, True))
+print(can_run_for_president(55, False))
+print(can_run_for_president(55, True))
+
+
+
+#Girilen sayının işaretini veren kod
+
+def inspect(x):
+    if x == 0:
+        print(x, "is zero")
+    elif x > 0:
+        print(x, "is positive")
+    elif x < 0:
+        print(x, "is negative")
+    else:
+        print(x, "is unlike anything I've ever seen...")
+
+inspect(0)
+inspect(-15)
+
+
+
+#if in içindeki ve dışındaki print lerin nasıl ayrımı
+
+def f(x):
+    if x > 0:
+        print("Only printed when x is positive; x =", x)
+        print("Also only printed when x is positive; x =", x)
+    print("Always printed, regardless of x's value; x =", x)
+
+f(1)
+f(0)
+
+
+
+#bool() dönüşümü
+
+print(bool("asf"))
+
+
+
+#Exercise_1: Girilen sayı negatifse -1, pozitifse 1, 0 ise 0 çıktısını veren fonk.
+
+def sign(x):
+    if x<0:
+        x=-1
+    elif x>0:
+        x=1
+    else:
+        x=0
+    return x   #Not:print(x) yazmıyoruz. Kod çalışsa bile aslında doğru işlemiyor.
+
+print(sign(9))
+
+
+
+#Exercise_2: Verilen şeker sayısı 3 e paylaştırıldıktan sonra ezilecek şeker sayısını veren fonk.
+
+def to_smash(total_candies):
+    if total_candies==1:
+         print("Splitting", total_candies, "candy")
+    else:
+         print("Splitting", total_candies, "candies")
+    return total_candies % 3
+
+to_smash(91)
+
+
+
+#Exercise_4: girilen sayı negatifse True pozitifse False döndüren fonks.
+
+def is_negative(number):
+    if number < 0:
+        return True
+    else:
+        return False
+    
+
+def concise_is_negative(number):    #En kısa haliyle.
+    return number < 0
+
+
+
+
+#Exercise_5: Bir müşterinin hot dog un üzerine ketçap, hardal ve soğan isteyip istememe durumlarını döndüren fonk.
+
+def onionless(ketchup, mustard, onion):
+    """Return whether the customer doesn't want onions.
+    """
+    return not onion
+
+
+def wants_all_toppings(ketchup, mustard, onion):
+    """Return whether the customer wants "the works" (all 3 toppings)
+    """
+    return ketchup and mustard and onion
+
+
+def wants_plain_hotdog(ketchup, mustard, onion):
+    """Return whether the customer wants a plain hot dog with no toppings.
+    """
+    return not ketchup and not mustard and not onion
+
+
+def exactly_one_sauce(ketchup, mustard, onion):
+    """Return whether the customer wants either ketchup or mustard, but not both.
+    (You may be familiar with this operation under the name "exclusive or")
+    """
+    return (ketchup and not mustard) or (mustard and not ketchup)
+
+
+
+#Exercise_6: Müşterinin sadece bir malzemeyi istemesi durumu
+
+def exactly_one_topping(ketchup, mustard, onion):
+    """Return whether the customer wants exactly one of the three available toppings
+    on their hot dog.
+    """
+    return (int(ketchup)+int(mustard)+int(onion))==1
+
+
+
+#Exercise_7: Blackjack oyunu.
+
+def should_hit(dealer_total, player_total, player_low_aces, player_high_aces):
+
+    if player_total < 12:   #Oyuncunun toplamı 12 den küçükse kart çeksin
+        return True
+
+    if player_high_aces > 0 and player_total < 18:  #Oyuncunun toplamı 18 den küçükse ve en az bir ası varsa kart çeksin
+        return True
+    
+    return False    #Diğer durumlarda çekmesin
