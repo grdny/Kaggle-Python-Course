@@ -1,0 +1,131 @@
+
+
+
+#Lists
+
+primes=[2, 3, 5, 7]
+print(primes)
+print(type(primes))
+
+
+planets = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune']
+print(planets)
+print(type(planets))
+
+
+#We can make a list of lists:
+
+hands = [
+    ['J', 'Q', 'K'],
+    ['2', '2', '2'],
+    ['6', 'A', 'K'], # (Comma after the last element is optional)
+]
+print(hands)
+print(type(hands))
+
+hands = [['J', 'Q', 'K'], ['2', '2', '2'], ['6', 'A', 'K']]
+
+
+#A list can contain a mix of different types of variables:
+
+my_favourite_things = [32, 'raindrops on roses', help]
+print(my_favourite_things)
+
+
+#Indexing
+
+print(planets[0])
+print(planets[1])
+print(planets[-1])
+print(planets[-2])
+
+
+#Slicing
+
+print(planets[0:3])  #first three planets
+print(planets[:3])   
+
+print(planets[3:])
+
+print(planets[1:-1])  # All the planets except the first and last
+
+print(planets[-3:]) # The last 3 planets
+
+
+#Changing lists
+
+planets[3] = 'Malacandra'
+print(planets)
+
+planets[:3] = ['Mur', 'Vee', 'Ur']
+print(planets)
+planets[:4] = ['Mercury', 'Venus', 'Earth', 'Mars',]
+print(planets)
+
+
+#List functions
+
+#len():
+print(len(planets))   # How many planets are there?
+
+#sorted():
+print(sorted(planets))   # The planets sorted in alphabetical order
+
+#sum():
+print(sum(primes))
+
+#min()/ max():
+print(min(primes))
+print(max(primes))
+
+
+
+#List methods
+
+print(planets.append('Pluto'))
+
+#list.pop(): list.pop removes and returns the last element of a list:
+print(planets.pop())
+print(planets)
+
+# Bir deste kartımız olsun
+kartlar = ["As", "Papaz", "Kız", "Vale"]
+
+# En sondaki "Vale" kartını çekiyoruz (pop yapıyoruz)
+cekilen_kart = kartlar.pop()
+
+print("Çekilen Kart:", cekilen_kart)  # Çıktı: Vale
+print("Kalan Kartlar:", kartlar)     # Çıktı: ['As', 'Papaz', 'Kız']
+
+
+#Searching lists: list.index()
+
+print(planets.index('Earth'))
+
+# Is Earth a planet?
+print("Earth" in planets)
+# Is Calbefraques a planet?
+print("Calbefraques" in planets)
+
+
+#Tuples: Yeni bir eleman eklenemez, çıkarılamaz, değiştirilemez. () ile oluşturulur.
+t = (1, 2, 3)
+
+#as_integer_ratio():
+sayi = 0.25
+kesir_hali = sayi.as_integer_ratio()
+
+print(kesir_hali)       # Çıktı: (1, 4)  --> İşte bu bir Tuple!
+print(type(kesir_hali)) # Çıktı: <class 'tuple'>
+
+x = 0.125
+print(x.as_integer_ratio())
+
+numerator, denominator = x.as_integer_ratio()
+print(numerator / denominator)
+
+
+a = 1
+b = 0
+a, b = b, a
+print(a, b)
