@@ -1,0 +1,99 @@
+
+
+spam_amount = 0
+print(spam_amount)
+
+
+spam_amount=spam_amount+4
+if spam_amount>0:
+    print("But I don't want ANY spam!")
+
+viking_song= "Spam" * spam_amount
+print(viking_song)
+
+
+
+#min/ max/ abs()
+
+#help()
+
+#round()
+
+
+def least_difference(a, b, c):
+    """Return the smallest difference between any two numbers
+    among a, b and c.
+    
+    >>> least_difference(1, 5, -5)
+    4
+    """
+    diff1 = abs(a-b)
+    diff2 = abs(b-c)
+    diff3 = abs(a-c)
+    return min(diff1, diff2, diff3)
+
+#NOT:Eğer oluşturduğumuz fonksiyonun içine bir açıklama yapmak istiyorsak
+#""" işaretini başta ve sonda kullanmalıyız.
+# >>> (docstring): işareti açıklamada fonksiyonun anlaşılması için verilen örnek için kullanılır.
+
+
+#sep: sep, Python'daki print() fonksiyonunun içinde kullanılan ve "separator" (ayırıcı) kelimesinin kısaltması olan bir parametredir.
+# Görevi, print() içine yazdığınız birden fazla ifadenin arasına hangi karakterin veya boşluğun geleceğini belirlemektir.
+# Eğer sep parametresini hiç yazmazsanız, Python varsayılan olarak her ifadenin arasına otomatik olarak bir adet boşluk koyar.
+
+print(1, 2, 3, sep='<')
+
+
+def greet(who="Colin"):
+    print("Hello,", who)
+
+greet()
+greet(who="Kaggle")
+greet("world")
+
+
+
+def mod_5(x):
+    """Return the remainder of x after dividing by 5"""
+    return x % 5
+
+print(mod_5(9))
+
+
+
+print(
+    'Which number is biggest?',
+    max(100, 51, 14),
+    'Which number is the biggest modulo 5?',
+    max(100, 51, 14, key=mod_5),
+    sep='\n',
+)
+
+
+
+# kendisine verilen bir ondalıklı sayıyı, virgülden sonra iki basamak kalacak şekilde yuvarlar.
+
+def round_to_two_places(num):
+    """Return the given number rounded to two decimal places. 
+    
+    >>> round_to_two_places(3.14159)
+    3.14
+    """
+    return round(num,2)
+
+print(round_to_two_places(8.165599))
+
+
+
+#Toplam şeker sayısını, arkadaş sayısına eşit olarak paylaştırdıktan sonra artan ve kırılması gereken şeker sayısını bulma.
+
+def to_smash(total_candies,n_friends=3):
+    """Return the number of leftover candies that must be smashed after distributing
+    the given number of candies evenly between 3 friends.
+    
+    >>> to_smash(91)
+    1
+    """
+    return total_candies % n_friends
+
+print(to_smash(55))
