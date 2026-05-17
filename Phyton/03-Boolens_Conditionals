@@ -1,5 +1,4 @@
 
-
 #Yaşı verilen bir kişinin yaşının başkan olmaya yeterli olup olmadığını veren kod
 
 def can_run_for_president(age):
