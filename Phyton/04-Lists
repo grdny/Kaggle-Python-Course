@@ -129,3 +129,67 @@ a = 1
 b = 0
 a, b = b, a
 print(a, b)
+
+
+
+#Question_1: Return the second element of the given list. If the list has no second element, return None.
+
+L=[1,5,6,8,3]
+
+def select_second(L):
+    if len(L)>=2:
+        return L[1]
+    else:
+        return None
+
+print(select_second(L))
+
+
+
+#Question_2: Given a list of teams, where each team is a list of names, return the 2nd player (captain) from the last listed team
+
+L = [['Paul', 'John', 'Ringo', 'George']]
+def losing_team_captain(teams):
+    return teams[-1][1]
+
+print(losing_team_captain(L))
+
+
+
+#Question_3: It warps the last place racer into first place and the first place racer into last place.
+racers =["Mario", "Bowser", "Luigi"]
+
+def purple_shell(racers):
+    racers[0], racers[-1] = racers[-1], racers[0]
+    return 
+
+purple_shell(racers)
+print(racers)
+
+
+
+#Question_4: The lengths of the following lists.
+
+a = [1, 2, 3]
+b = [1, [2, 3]]
+c = []
+d = [1, 2, 3][1:]
+
+print(len(a))
+print(len(b))
+print(len(c))
+print(len(d))
+
+
+
+#Question_5: A guest is considered 'fashionably late' if they arrived after at least half of the party's guests.
+#The function below which takes a list of party attendees as well as a person, and tells us whether that person is fashionably late.
+
+arrivals = ['Adela', 'Fleda', 'Owen', 'May', 'Mona', 'Gilbert', 'Ford']
+
+def fashionably_late(arrivals,name):
+    order = arrivals.index(name)
+    return order >= len(arrivals) / 2 and order != len(arrivals)-1
+
+print(fashionably_late(arrivals,'Mona'))
+
